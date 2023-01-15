@@ -1,0 +1,21 @@
+<template>
+  <div class="a-container">
+    <div>{{ message }}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  initData () {
+    return {
+      message: 'this is A.san'
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+  .a-container {
+    color: blue;
+  }
+</style>

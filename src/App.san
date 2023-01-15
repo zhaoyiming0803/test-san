@@ -1,0 +1,29 @@
+<template>
+  <div class="app-container">
+    <div>{{ a + b }}</div>
+    <a-component></a-component>
+  </div>
+</template>
+
+<script>
+import A from './A'
+
+export default {
+  initData () {
+    return {
+      a: 1,
+      b: 2
+    }
+  },
+
+  components: {
+    'a-component': A
+  }
+}
+</script>
+
+<style lang="less" scoped>
+  .app-container {
+    color: #f00;
+  }
+</style>
