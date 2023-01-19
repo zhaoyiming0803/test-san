@@ -1,12 +1,18 @@
 <template>
   <div class="app-container">
+    <!--
     <div>{{ a + b }}</div>
+    <div class="sum">{{ sumAAndB(a, b) }}</div>
+    <div>{{ c }}</div>
+    -->
     <a-component></a-component>
+    <!-- <b-component></b-component> -->
   </div>
 </template>
 
 <script>
 import A from './A'
+// import B from './B'
 
 export default {
   initData () {
@@ -17,7 +23,18 @@ export default {
   },
 
   components: {
-    'a-component': A
+    'a-component': A,
+    // 'b-component': B
+  },
+
+  sumAAndB (a, b) {
+    return a + b
+  },
+
+  computed: {
+    c () {
+      return this.data.get('a') * this.data.get('b')
+    }
   }
 }
 </script>
@@ -25,5 +42,9 @@ export default {
 <style lang="less" scoped>
   .app-container {
     color: #f00;
+
+    .sum {
+      color: blue;
+    }
   }
 </style>

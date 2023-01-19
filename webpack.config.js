@@ -6,6 +6,14 @@ function resolve(dir, file = '') {
   return path.resolve(__dirname, './', dir, file)
 }
 
+class TestWebpackPlugin {
+  apply (compiler) {
+    compiler.hooks.emit.tap('TestWebpackPlugin', (compilation) => {
+      console.log(compilation)
+    })
+  }
+}
+
 module.exports = {
   mode: 'none',
   entry: resolve('index.js'),
@@ -59,7 +67,8 @@ module.exports = {
         minifyURLs: true,
       },
     }),
-    new SanLoaderPlugin()
+    new SanLoaderPlugin(),
+    new TestWebpackPlugin()
   ],
   devServer: {
     host: 'localhost',

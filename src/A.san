@@ -1,6 +1,7 @@
 <template>
   <div class="a-container">
-    <div>{{ message }}</div>
+    <div on-click="changeMessage">{{ message }}</div>
+    <div id="message">{{ message }}</div>
   </div>
 </template>
 
@@ -10,6 +11,11 @@ export default {
     return {
       message: 'this is A.san'
     }
+  },
+
+  changeMessage () {
+    debugger
+    this.data.set('message', Math.random())
   }
 }
 </script>
